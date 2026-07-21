@@ -28,3 +28,34 @@ Power Saver
 Disable Energy Saver
         ↓
 Ultimate Performance
+```
+
+The restored plan can also be Balanced, High Performance, or another custom power plan.
+
+## Requirements
+
+- Windows 11 version 24H2 or later
+- Windhawk
+- The standard Windows Power Saver plan must be available
+
+## Installation
+
+1. Open Windhawk.
+2. Select **Create a new mod**.
+3. Replace the example code with the contents of `energy-saver-power-plan-link.wh.cpp`.
+4. Select **Compile Mod**.
+5. Enable the mod.
+
+## Verification
+
+Run this command in PowerShell:
+
+```powershell
+powercfg /getactivescheme
+```
+
+Enabling Energy Saver should activate Power Saver. Disabling Energy Saver should restore the previously active plan.
+
+## License
+
+Licensed under the MIT License.

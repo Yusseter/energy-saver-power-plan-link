@@ -5,7 +5,7 @@
 // @version         1.0.0
 // @author          Yusseter
 // @github          https://github.com/Yusseter
-// @homepage        https://github.com/Yusseter/windhawk-energy-saver-power-plan-link
+// @homepage        https://github.com/Yusseter/energy-saver-power-plan-link
 // @license         MIT
 // @include         explorer.exe
 // @architecture    x86-64

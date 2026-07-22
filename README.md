@@ -1,6 +1,10 @@
 # Energy Saver Power Plan Link
 
-A Windhawk mod that links the Windows 11 **Energy Saver** toggle with the classic **Power Saver** power plan.
+A Windhawk tool mod that links the Windows 11 **Energy Saver** toggle with the
+classic **Power Saver** power plan.
+
+The mod runs in a dedicated Windhawk process instead of being injected into
+`explorer.exe`.
 
 ## How it works
 
@@ -14,23 +18,27 @@ When Energy Saver is disabled, the mod:
 - Restores the previously active power plan.
 - Restores it only if Power Saver is still active.
 
-If the user manually selects another power plan while Energy Saver is enabled, that manual selection is preserved.
+If the user manually selects another power plan while Energy Saver is enabled,
+that manual selection is preserved.
+
+Disabling the mod also restores the previous power plan when appropriate.
 
 ## Example
 
 ```text
-Ultimate Performance
-        ↓
+Balanced
+    ↓
 Enable Energy Saver
-        ↓
+    ↓
 Power Saver
-        ↓
+    ↓
 Disable Energy Saver
-        ↓
-Ultimate Performance
+    ↓
+Balanced
 ```
 
-The restored plan can also be Balanced, High Performance, or another custom power plan.
+The restored plan can also be High Performance, Ultimate Performance, or another
+custom power plan.
 
 ## Requirements
 
@@ -38,13 +46,9 @@ The restored plan can also be Balanced, High Performance, or another custom powe
 - Windhawk
 - The standard Windows Power Saver plan must be available
 
-## Installation
-
-1. Open Windhawk.
-2. Select **Create a new mod**.
-3. Replace the example code with the contents of `energy-saver-power-plan-link.wh.cpp`.
-4. Select **Compile Mod**.
-5. Enable the mod.
+> On some Modern Standby systems, the classic Power Saver plan might be hidden
+> or unavailable. In that case, Windows can't switch to Power Saver and the mod
+> leaves the current power plan unchanged.
 
 ## Verification
 
@@ -54,7 +58,8 @@ Run this command in PowerShell:
 powercfg /getactivescheme
 ```
 
-Enabling Energy Saver should activate Power Saver. Disabling Energy Saver should restore the previously active plan.
+Enabling Energy Saver should activate Power Saver. Disabling Energy Saver should
+restore the previously active plan.
 
 ## License
 
